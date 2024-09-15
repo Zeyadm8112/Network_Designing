@@ -39,8 +39,8 @@ Router(config-if)# no shutdown
 Router(config)# interface gigabitEthernet 0/1
 Router(config-if)# ip address 198.162.40.129 255.255.255.128
 Router(config-if)# no shutdown
--------------------------------------------
 
+```
 2. PC and Printer Configuration
 Each PC and printer in both departments were configured with static IP addresses, following the subnet scheme provided:
 
