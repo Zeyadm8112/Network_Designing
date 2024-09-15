@@ -2,6 +2,10 @@
 
 This project simulates a simple network in **Cisco Packet Tracer** to connect two departments—**Accounts** and **Delivery**—using routers and switches. The setup follows the provided instructions to ensure that all PCs can communicate with each other, especially between departments.
 
+LAB :
+
+![Q1](https://github.com/user-attachments/assets/cbeea121-1618-4526-a9eb-8934ccca57af)
+
 ---
 
 ## Network Overview
@@ -44,14 +48,22 @@ Router(config-if)# no shutdown
 2. PC and Printer Configuration
 Each PC and printer in both departments were configured with static IP addresses, following the subnet scheme provided:
 
-Accounts Department (198.162.40.0/25):
-PC0: 198.162.40.2, default gateway: 198.162.40.1
-PC1: 198.162.40.3, default gateway: 198.162.40.1
-Printer0: 198.162.40.4
-Delivery Department (198.162.40.128/25):
-PC2: 198.162.40.130, default gateway: 198.162.40.129
-PC3: 198.162.40.131, default gateway: 198.162.40.129
-Printer2: 198.162.40.132
+- Accounts Department (198.162.40.0/25):
+  - PC0: 198.162.40.2, default gateway: 198.162.40.1
+  - PC1: 198.162.40.3, default gateway: 198.162.40.1
+  - Printer0: 198.162.40.4
+- Delivery Department (198.162.40.128/25):
+  - PC2: 198.162.40.130, default gateway: 198.162.40.129
+  - PC3: 198.162.40.131, default gateway: 198.162.40.129
+  - Printer2: 198.162.40.132
+ 
+
+Resualt:
+
+
+![Network](https://github.com/user-attachments/assets/160134f5-d6be-4788-a0fd-0c551a87b9e0)
+
+
 3. Testing
 After configuring the devices, the connectivity was tested by pinging between the PCs in both departments. PCs in the Delivery department were able to successfully ping PCs in the Accounts department, confirming that routing was working correctly.
 
