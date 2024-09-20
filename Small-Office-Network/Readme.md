@@ -6,6 +6,9 @@ This project provides a detailed design and implementation of a small office net
 ## Project Overview
 
 Lab :
+
+
+
 ![Q2](https://github.com/user-attachments/assets/cbb1ec9c-a3ed-41db-b35a-164993bcbffe)
 
 ### Key Requirements
