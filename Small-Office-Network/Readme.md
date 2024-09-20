@@ -1,6 +1,3 @@
-Here’s an updated `README.md` file with the license section updated to reflect "NinjaCat811":
-
----
 
 # Small Office Network Design
 
