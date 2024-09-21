@@ -34,7 +34,7 @@ The network diagram includes:
 | Department                | VLAN | IP Range            | Wireless Access Point |  
 |---------------------------|------|---------------------|-----------------------|
 | Admin/IT                   | 20   | 192.168.1.64/26     | Yes                   |
-| Finance/HR                 | 10   | 192.168.1.0/24      | Yes                   |
+| Finance/HR                 | 10   | 192.168.1.0/26      | Yes                   |
 | Customer Service/Reception | 30   | 192.168.1.128/26    | Yes                   |
 
 ## Configuration
@@ -151,8 +151,8 @@ Switch(config)# exit
 
 ## Final Network
 
-![Small-Office-Network](https://github.com/user-attachments/assets/9bf8cc7f-5b83-4a0e-954a-66ac4d20e128)
 
+![poc](https://github.com/user-attachments/assets/058aa03f-596e-4425-b494-760bfe2c09c8)
 
 
 ## License
