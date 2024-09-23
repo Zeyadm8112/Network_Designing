@@ -39,6 +39,61 @@ The network diagram includes:
 
 ## Configuration
 
+### Switch Configuration
+
+This will configure VLANs and assign ports for devices in different departments.
+
+```bash
+# VLANs Configuration on the Switch
+
+Switch> enable
+Switch# configure terminal
+
+# Create VLAN 10 (Finance/HR)
+Switch(config)# VLAN10
+Switch(config-vlan)# name finance_vlan
+Switch(config-vlan)# exit
+
+# Create VLAN 20 (Admin/IT)
+Switch(config)# vlan 20
+Switch(config-vlan)# name it_vlan
+Switch(config-vlan)# exit
+
+# Create VLAN 30 (Customer Service/Reception)
+Switch(config)# vlan 30
+Switch(config-vlan)# name cs_vlan
+Switch(config-vlan)# exit
+
+# Assign ports to VLANs
+# Finance/HR (VLAN 10)
+Switch(config)# interface range FastEthernet0/2 - 5
+Switch(config-if-range)# switchport mode access
+Switch(config-if-range)# switchport access vlan 10
+Switch(config-if-range)# exit
+
+# Admin/IT (VLAN 20)
+Switch(config)# interface range FastEthernet0/11 - 16
+Switch(config-if-range)# switchport mode access
+Switch(config-if-range)# switchport access vlan 20
+Switch(config-if-range)# exit
+
+# Customer Service/Reception (VLAN 30)
+Switch(config)# interface range FastEthernet0/6 - 10
+Switch(config-if-range)# switchport mode access
+Switch(config-if-range)# switchport access vlan 30
+Switch(config-if-range)# exit
+
+# Configure trunking between switch and router
+Switch(config)# interface FastEthernet0/1
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport mode trunk allow vlan 10,20,30 
+Switch(config-if)# exit
+
+# Save configuration
+Switch(config)# exit
+
+```
+
 ### Router Configuration
 
 This configuration handles routing between VLANs, DHCP setup, and inter-departmental communication.
@@ -49,27 +104,32 @@ This configuration handles routing between VLANs, DHCP setup, and inter-departme
 Router> enable
 Router# configure terminal
 
+
+Router(config)# interface FastEthernet0/0.0
+Router(config)# no sh
+
+
 # Sub-interface for VLAN 10 (Finance/HR)
 Router(config)# interface FastEthernet0/0.10
+Router(config-subif)# ip address 192.168.1.1 255.255.255.192
 Router(config-subif)# encapsulation dot1Q 10
-Router(config-subif)# ip address 192.168.1.1 255.255.255.0
 Router(config-subif)# exit
 
 # Sub-interface for VLAN 20 (Admin/IT)
 Router(config)# interface FastEthernet0/0.20
-Router(config-subif)# encapsulation dot1Q 20
 Router(config-subif)# ip address 192.168.1.65 255.255.255.192
+Router(config-subif)# encapsulation dot1Q 20
 Router(config-subif)# exit
 
 # Sub-interface for VLAN 30 (Customer Service)
 Router(config)# interface FastEthernet0/0.30
-Router(config-subif)# encapsulation dot1Q 30
 Router(config-subif)# ip address 192.168.1.129 255.255.255.192
+Router(config-subif)# encapsulation dot1Q 30
 Router(config-subif)# exit
 
 # Enable DHCP on each VLAN
 Router(config)# ip dhcp pool hr-pool
-Router(dhcp-config)# network 192.168.1.0 255.255.255.0
+Router(dhcp-config)# network 192.168.1.0 255.255.255.192
 Router(dhcp-config)# default-router 192.168.1.1
 Router(dhcp-config)# dns-server 192.168.1.1
 Router(dhcp-config)# domain-name finance.com
@@ -94,60 +154,7 @@ Router(dhcp-config)# exit
 Router(config)# do wr
 ```
 
-### Switch Configuration
 
-This will configure VLANs and assign ports for devices in different departments.
-
-```bash
-# VLANs Configuration on the Switch
-
-Switch> enable
-Switch# configure terminal
-
-# Create VLAN 10 (Finance/HR)
-Switch(config)# VLAN10
-Switch(config-vlan)# name Finance_HR
-Switch(config-vlan)# exit
-
-# Create VLAN 20 (Admin/IT)
-Switch(config)# vlan 20
-Switch(config-vlan)# name VLAN20
-Switch(config-vlan)# exit
-
-# Create VLAN 30 (Customer Service/Reception)
-Switch(config)# vlan 30
-Switch(config-vlan)# name VLAN30
-Switch(config-vlan)# exit
-
-# Assign ports to VLANs
-# Finance/HR (VLAN 10)
-Switch(config)# interface range FastEthernet0/2 - 5
-Switch(config-if-range)# switchport mode access
-Switch(config-if-range)# switchport access vlan 10
-Switch(config-if-range)# exit
-
-# Admin/IT (VLAN 20)
-Switch(config)# interface range FastEthernet0/11 - 16
-Switch(config-if-range)# switchport mode access
-Switch(config-if-range)# switchport access vlan 20
-Switch(config-if-range)# exit
-
-# Customer Service/Reception (VLAN 30)
-Switch(config)# interface range FastEthernet0/6 - 10
-Switch(config-if-range)# switchport mode access
-Switch(config-if-range)# switchport access vlan 30
-Switch(config-if-range)# exit
-
-# Configure trunking between switch and router
-Switch(config)# interface FastEthernet0/24
-Switch(config-if)# switchport mode trunk
-Switch(config-if)# switchport trunk encapsulation dot1q
-Switch(config-if)# exit
-
-# Save configuration
-Switch(config)# exit
-
-```
 
 ## Final Network
 
