@@ -14,8 +14,8 @@ Lab :
 ### Key Requirements
 - **Router and Switch:** Cisco products are used for the network infrastructure.
 - **Departments and VLANs:**
-  - **Admin/IT:** VLAN 20, IP Range: 192.168.1.64/26
   - **Finance/HR:** VLAN 10, IP Range: 192.168.1.0/26
+  - **Admin/IT:** VLAN 20, IP Range: 192.168.1.64/26
   - **Customer Service/Reception:** VLAN 30, IP Range: 192.168.1.128/26
 - **Wireless Access:** Each department has its own wireless access point.
 - **Automatic IP Assignment:** DHCP is configured to allocate IPv4 addresses automatically.
@@ -33,8 +33,8 @@ The network diagram includes:
 
 | Department                | VLAN | IP Range            | Wireless Access Point |  
 |---------------------------|------|---------------------|-----------------------|
-| Admin/IT                   | 20   | 192.168.1.64/26     | Yes                   |
 | Finance/HR                 | 10   | 192.168.1.0/26      | Yes                   |
+| Admin/IT                   | 20   | 192.168.1.64/26     | Yes                   |
 | Customer Service/Reception | 30   | 192.168.1.128/26    | Yes                   |
 
 ## Configuration
