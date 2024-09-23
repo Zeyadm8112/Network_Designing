@@ -15,7 +15,7 @@ Lab :
 - **Router and Switch:** Cisco products are used for the network infrastructure.
 - **Departments and VLANs:**
   - **Admin/IT:** VLAN 20, IP Range: 192.168.1.64/26
-  - **Finance/HR:** VLAN 10, IP Range: 192.168.1.0/24
+  - **Finance/HR:** VLAN 10, IP Range: 192.168.1.0/26
   - **Customer Service/Reception:** VLAN 30, IP Range: 192.168.1.128/26
 - **Wireless Access:** Each department has its own wireless access point.
 - **Automatic IP Assignment:** DHCP is configured to allocate IPv4 addresses automatically.
