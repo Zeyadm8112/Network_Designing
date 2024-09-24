@@ -111,7 +111,7 @@ Router(config-if)#do wr
 
 | /            | Store              | Logistics           | Reception          |
 | ------------ | ------------------ | ------------------- | ------------------ |
-| VLAN         | VLAn 60            | VLAN 70             | VLAN 80            |
+| VLAN         | VLAN 60            | VLAN 70             | VLAN 80            |
 | Network      | 192.168.6.0/24     | 192.168.7.0/24      | 192.168.8.0/24     |
 | Switch Ports | FastEthernet 0/2-4 | FastEthernet 0/9-12 | FastEthernet 0/6-8 |
 
@@ -202,11 +202,11 @@ Switch(config-if)# exit
 
 
 
-| /            | Store              | Logistics           | Reception          |
+| /            | Sales              | HR                  | Finance            |
 | ------------ | ------------------ | ------------------- | ------------------ |
-| VLAN         | VLAn 60            | VLAN 70             | VLAN 80            |
-| Network      | 192.168.6.0/24     | 192.168.7.0/24      | 192.168.8.0/24     |
-| Switch Ports | FastEthernet 0/2-4 | FastEthernet 0/9-12 | FastEthernet 0/6-8 |
+| VLAN         | VLAN 30            | VLAN 40             | VLAN 50            |
+| Network      | 192.168.3.0/24     | 192.168.4.0/24      | 192.168.5.0/24     |
+| Switch Ports | FastEthernet 0/2-4 | FastEthernet 0/5-7 | FastEthernet 0/8-11 |
 
 ### Switch Configuration
 
