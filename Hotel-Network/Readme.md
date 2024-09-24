@@ -2,7 +2,7 @@
 This project is about designing and implementing modern network to a hotel with three floors.
 ## Project Overview
 
-![[lab3.png]]
+![lab3](https://github.com/user-attachments/assets/a8e1fb52-e1a9-4987-b3bb-ba5af9709328)
 
 ## Key Requirements
 
@@ -193,7 +193,8 @@ Switch(config-if)# exit
 #### Overview
 
 
-![[1st-floor-poc.png]]
+![1st-floor-poc](https://github.com/user-attachments/assets/0089fc64-3e34-4e2c-b511-954b0c3304b2)
+
 
 -----
 
@@ -288,7 +289,8 @@ Switch(config-if)# exit
 
 #### Overview
 
-![[2nd-floor-poc.png]]
+![2nd-floor-poc](https://github.com/user-attachments/assets/938aeaaf-a7d4-4151-bad3-74ee4783471f)
+
 
 ----
 
@@ -368,9 +370,8 @@ Switch(config-if)# exit
 #### Overview
 
 
-![[3rd-floor-poc.png]]
 
-
+![3rd-floor-poc](https://github.com/user-attachments/assets/374c8b57-90e0-48a6-932b-37884f244384)
 
 
 
