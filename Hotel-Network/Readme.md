@@ -129,7 +129,7 @@ Switch#conf t
 
 Switch(config)#vlan 70
 
-Switch(config-vlan)#name stote-vlan
+Switch(config-vlan)#name store-vlan
 
 Switch(config-vlan)#vlan 80
 
